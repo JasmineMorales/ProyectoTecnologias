@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-1"></div>    
+    <div class="col-9">
+        <table class="table">
+            <thead class="thead-dark text-center">
+                <tr>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Escala</th>
+                    <th scope="col">Datos</th>
+                    <th scope="col">Valor máximo</th>
+                    <th scope="col">Valor mínimo</th>
+                    <th scope="col">Promedio</th>
+                    <th scope="col">Color</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let categoria of categorias">
+                    <td>{{categoria.NOMBRE_CATE}}</td>
+                    <td>{{categoria.ESCALA_CATE}}</td>
+                    <td class="justify">{{categoria.DATOS_CATE}}</td>
+                    <td>{{categoria.MAX_VALUE}}</td>
+                    <td>{{categoria.MIN_VALUE}}</td>
+                    <td>{{categoria.AVERAGE}}</td>
+                    <td>
+                    <input class="form-control" [(colorPicker)]="categoria.COLOR_CATE" [style.background]="categoria.COLOR_CATE" readonly disabled/>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
